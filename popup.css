@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 body {
   width: auto;
   width: 400px;
   background-color: #f5f5f5;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .heading {
@@ -12,17 +12,17 @@ body {
   font-size: 1.7rem;
 }
 .apexcharts-menu-icon {
- display: none;
+  display: none;
 }
 .pulse-button {
   width: 20px;
-  margin-top:20px;
+  margin-top: 20px;
   height: 20px;
-  vertical-align:-40%;
+  vertical-align: -40%;
   border: 2px solid #e75753;
   border-radius: 50%;
-  margin-left:10px;
-  margin-right:20px;
+  margin-left: 10px;
+  margin-right: 20px;
   background: rgba(231, 87, 83, 1);
   text-align: center;
   color: #e75753;
@@ -31,7 +31,7 @@ body {
   transition: 0.5s;
 }
 #containgrey {
-  background-color: #f5f5f5
+  background-color: #f5f5f5;
 }
 
 @keyframes pulse {
@@ -49,12 +49,17 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bolder;
-
 }
 .top {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.top > .fa {
+  font-size: 24px;
+  color: #e75753;
+  text-decoration: none;
 }
 
 .top-element div {
@@ -77,7 +82,7 @@ body {
 }
 
 .information {
-  height:auto;
+  height: auto;
 }
 
 .infoline {
@@ -114,7 +119,7 @@ body {
 
 .switch-label:before,
 .switch-label:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   cursor: pointer;
@@ -182,7 +187,6 @@ body {
   border-bottom: 1px solid #e75753;
 }
 
-
 #hidden_field:focus {
   outline: none;
 }
@@ -215,7 +219,7 @@ body {
 
 .bar:before,
 .bar:after {
-  content: "";
+  content: '';
   height: 2px;
   width: 0;
   bottom: 1px;
@@ -324,18 +328,4 @@ body {
 }
 .downloadBox div {
   display: inline-block;
-}
-.fa-power-off {
-font-size:24px;
-color:#e75753;
-text-decoration: none;
-position: absolute;
-right:18px;
-}
-.fa-user-circle-o {
-font-size:24px;
-color:#e75753;
-position: absolute;
-text-decoration: none;
-left:18px;
 }
