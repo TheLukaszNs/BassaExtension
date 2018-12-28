@@ -1,8 +1,19 @@
+function linkValidator(link) {
+  const urlvalidator = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i;
+  const magnetvalidator = /magnet:\?xt=/i;
+  if (urlvalidator.test(link) || link.match(magnetvalidator) !== null) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function addDownload() {
   var downurl = document.getElementsByClassName("urlText")[0].value;
+  let n;
 
   if (downurl === "" || downurl === null || !linkValidator(downurl)) {
-    const n = noty({
+    n = noty({
       text: "Please Enter a valid URL",
       layout: "bottomRight",
       animation: {
@@ -13,7 +24,7 @@ function addDownload() {
     });
   } else {
     try {
-      const n = noty({
+      n = noty({
         text: "Download listed",
         layout: "bottomRight",
         animation: {
@@ -32,16 +43,6 @@ function addDownload() {
     } catch (error) {
       alert("Error");
     }
-  }
-}
-
-function linkValidator(link) {
-  const urlvalidator = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i;
-  const magnetvalidator = /magnet:\?xt=/i;
-  if (urlvalidator.test(link) || link.match(magnetvalidator) !== null) {
-    return true;
-  } else {
-    return false;
   }
 }
 
@@ -132,6 +133,6 @@ var n = noty({
 });*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  const download_btn = document.getElementById("download_btn");
-  download_btn.addEventListener("click", () => addDownload());
+  const downloadBtn = document.getElementById("download_btn");
+  downloadBtn.addEventListener("click", addDownload);
 });
